@@ -59,7 +59,7 @@ def twinkle(wait):
     
     
     pixel_index=randint(0,9)
-    for bright in range(255,0,-1):
+    for bright in range(100,0,-1):
       pixels[pixel_index]=(0,0,bright,0)
       pixels.show()
       time.sleep(wait)
@@ -108,7 +108,7 @@ def main():
     #pixels.show()
     #time.sleep(1)
     #pong(0.05)
-    twinkle(3)
+    twinkle(0.05)
     #rainbow_cycle(0.001)    # rainbow cycle with 1ms delay per step
 
 if __name__=="__main__":
