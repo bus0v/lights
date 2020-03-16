@@ -109,7 +109,7 @@ def main():
     #pixels.show()
     #time.sleep(1)
     #pong(0.05)
-    twinkle(0.001)
+    twinkle(0.00001)
     #rainbow_cycle(0.001)    # rainbow cycle with 1ms delay per step
 
 if __name__=="__main__":
