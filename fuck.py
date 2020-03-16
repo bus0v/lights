@@ -59,7 +59,7 @@ def twinkle(wait):
     
     
     pixel_index=randint(0,9)
-    for bright in range(255,0,-1)
+    for bright in range(255,0,-1):
       pixels[pixel_index]=(0,0,bright,0)
       pixels.show()
       time.sleep(wait)
