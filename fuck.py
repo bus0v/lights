@@ -46,6 +46,7 @@ def wheel(pos):
 
 
 def rainbow_cycle(wait):
+  while(True):
     for j in range(255):
         for i in range(num_pixels):
             pixel_index = (i * 256 // num_pixels) + j
@@ -54,12 +55,17 @@ def rainbow_cycle(wait):
         time.sleep(wait)
 
 def twinkle(wait):
+  while(True):
+    
+    
     pixel_index=randint(0,9)
-    pixels[pixel_index]=(0,0,100,0)
-    pixels.show()
-    time.sleep(wait)
+    for bright in range(255,0,-1)
+      pixels[pixel_index]=(0,0,bright,0)
+      pixels.show()
+      time.sleep(wait)
    # time.sleep(wait)
     pixels[pixel_index] = (0,0,0,0)
+    time.sleep(wait*10)
 
 def pong(wait):
     n=0
