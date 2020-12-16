@@ -19,8 +19,7 @@ num_pixels = 10
 ORDER = neopixel.GRBW
 
 
-pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False,
-                           pixel_order=ORDER)
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False,pixel_order=ORDER)
 
 
 def wheel(pos):
