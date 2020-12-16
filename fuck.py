@@ -9,7 +9,7 @@ import neopixel
 #pixel_pin = board.NeoPixel
 
 # On a Raspberry pi, use this instead, not all pins are supported
-pixel_pin = board.D18
+pixel_pin = board.D10
 
 # The number of NeoPixels
 num_pixels = 115
@@ -87,8 +87,7 @@ def pong(wait):
         n=n+1
 
 def main():
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    # pixels.fill((255, 0, 0))
+    
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     #pixels.fill((255, 0, 0, 0)
     
