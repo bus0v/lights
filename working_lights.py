@@ -47,6 +47,11 @@ def colorWipe(strip, color, wait_ms=50):
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
+def blank(strip, wait_ms=50):
+    for i in range(strip.numPixels()):
+        strip.setPixelColor(i,(0,0,0,0))
+        strip.show()
+        time.sleep(wait_ms / 1000.0) 
 
 # Main program logic follows:
 if __name__ == '__main__':
@@ -55,12 +60,17 @@ if __name__ == '__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
     # Intialize the library (must be called once before other functions).
     strip.begin()
-    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+
+    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
-    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+    blank(strip(0))
+    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
-    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+    blank(strip(0))
+    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
+    blank(strip(0))
+
     start=time.time()
     print('Press Ctrl-C to quit.')
     while True:
@@ -68,7 +78,7 @@ if __name__ == '__main__':
             if i=='instrument' or i==81:
                 continue
             else:
-                print(i)
+                #print(i)
                 nstart=note_list[0][1]
                 nstop=note_list[0][2]
                 npitch=note_list[0][0]
