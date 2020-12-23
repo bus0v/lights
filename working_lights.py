@@ -58,7 +58,7 @@ if __name__ == '__main__':
     start=time.time()
     print('Press Ctrl-C to quit.')
     while True:
-        for i in biglist[0]:
+        for i in note_list[0]:
             print(i)
             print(time.time()-start)
         # Color wipe animations.
