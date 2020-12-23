@@ -10,7 +10,7 @@ from rpi_ws281x import Color, PixelStrip, ws
 
 midi_data = pretty_midi.PrettyMIDI('C:\\Users\\PC\\Documents\\Compsci pursuits!\\music_midi\\90s.mid')
 print("duration:",midi_data.get_end_time())
-print(f'{"note":>10} {"start":>10} {"end":>10}')
+#print(f'{"note":>10} {"start":>10} {"end":>10}')
 big_list=[]
 n=0
 for instrument in midi_data.instruments:
