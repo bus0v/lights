@@ -55,7 +55,12 @@ if __name__ == '__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
     # Intialize the library (must be called once before other functions).
     strip.begin()
-    strip.colorWipe
+    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+    time.sleep(2)
+    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+    time.sleep(2)
+    colorWipe(strip, Color(0, 0, 255), 0)  # Green wipe
+    time.sleep(2)
     start=time.time()
     print('Press Ctrl-C to quit.')
     while True:
@@ -64,12 +69,15 @@ if __name__ == '__main__':
                 continue
             else:
                 print(i)
-                nstrart=note_list[0][1]
-                nstrop=note_list[0][2]
+                nstart=note_list[0][1]
+                nstop=note_list[0][2]
                 npitch=note_list[0][0]
-                if (time.time()-start)==nstrart:
-
-                    strip.setPixelColor(0, Color(255, 255, 255,0))
+                if (time.time()-start)==nstart:
+                    
+                    strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
+                    strip.show()
+                    time.sleep(nstart-nstop)
+                    strip.setPixelColor(0,Color(0,0,0,0))
             #print(time.time()-start)
         # Color wipe animations.
         
