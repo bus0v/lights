@@ -94,5 +94,5 @@ if __name__ == '__main__':
             strip.show()
             i=i+1
         
-        time.sleep(0.005)
+        
         
