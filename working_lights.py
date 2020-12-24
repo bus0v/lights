@@ -91,6 +91,7 @@ if __name__ == '__main__':
             strip.show()
             time.sleep(nstop-nstart)
             strip.setPixelColor(0,Color(0,0,0,0))
+            strip.show()
             i=i+1
         
         time.sleep(0.005)
