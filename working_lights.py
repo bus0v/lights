@@ -89,7 +89,7 @@ if __name__ == '__main__':
             print("NoteMatched!")
             strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
             strip.show()
-            time.sleep(nstart-nstop)
+            time.sleep(nstop-nstart)
             strip.setPixelColor(0,Color(0,0,0,0))
             i=i+1
         
