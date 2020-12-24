@@ -63,13 +63,13 @@ if __name__ == '__main__':
 
     colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip(0))
+    blank(strip)
     colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip(0))
+    blank(strip)
     colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip(0))
+    blank(strip)
 
     start=time.time()
     print('Press Ctrl-C to quit.')
