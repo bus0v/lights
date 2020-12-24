@@ -144,9 +144,9 @@ if __name__ == '__main__':
             pitch=note[1]
             n_start=note[2]
             n_end=note[3]
-            print("instrument",instrument)
-            if (previous_note[2]-n_end)>0:
-                time.sleep(previous_note[2]-n_end)
+            #print("instrument",instrument)
+            if (n_start-previous_note[3])>0.0:
+                time.sleep(n_start-previous_note[3])
                 print("resting")
             else:
 
