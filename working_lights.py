@@ -77,14 +77,14 @@ if __name__ == '__main__':
     start=time.time()
     print('Press Ctrl-C to quit.')
     i=0
-    note_list=note_list[0][2:]
+    note_list=note_list[1][2:]
 
     while True:
         nstart=note_list[i][1]
         print("start of the note",nstart)
         nstop=note_list[i][2]
         npitch=note_list[i][0]
-        if (round(time.time(),2)+15-start)==nstart:
+        if (round(time.time(),2)-start)==nstart:
             print("NoteMatched!")
             strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
             strip.show()
@@ -92,5 +92,5 @@ if __name__ == '__main__':
             strip.setPixelColor(0,Color(0,0,0,0))
             i=i+1
         
-        time.sleep(0.005)
-        print("current time",time.time()-start)
+        time.sleep(0.05)
+        print("current time",round(time.time()-start,2))
