@@ -150,14 +150,15 @@ if __name__ == '__main__':
             else:
 
                 if instrument=="Piano":
-                    for p in range(0,30):
-                        strip.setPixelColor(p,wheel(pitch))
+                    #for p in range(0,30):
+
+                    strip.setPixelColor(pitch,wheel(pitch))
 
                     strip.show()
                     print("playing note",pitch)
                     time.sleep(n_end-n_start)
-                    for p in range(0,30):
-                        strip.setPixelColor(p,Color(0,0,0,0))
+                    #for p in range(0,30):
+                    strip.setPixelColor(pitch,Color(0,0,0,0))
                     strip.show()
                 
             previous_note=note
