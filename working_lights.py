@@ -94,6 +94,7 @@ if __name__ == '__main__':
     while True:
         #for j in range(len(big_list)+1):
         print("this is j ",j)
+        print(big_list[j])
         note_list=big_list[j][2:]
         print("current time",round(time.time()-start,2))
         nstart=float(note_list[i][1])
