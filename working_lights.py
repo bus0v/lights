@@ -85,15 +85,14 @@ best_list=[['Piano', 42, 0.0, 0.125], ['Piano', 36, 0.0, 0.125], ['Piano', 42, 0
    ['Piano', 39, 47.5, 47.625], ['Piano', 49, 48.0, 48.25], ['Piano', 36, 48.0, 48.25]]
 
 def wheel(pos):
+    rgb_int=16777215
+    rgb=int(pos/108*rgb_int)
     """Generate rainbow colors across 0-255 positions."""
-    if pos < 29:
-        return Color(pos * 3, 255 - pos * 3, 0,0)
-    elif pos < 58:
-        pos -= 85
-        return Color(255 - pos * 3, 0, pos * 3,0)
-    else:
-        pos -= 170
-        return Color(0, pos * 3, 255 - pos * 3,0)
+    blue=rgb%256
+    green=int((rgb/256)%256)
+    red=int(((rgb/256)/256)%256)
+
+    return Color(green,red,blue,0)
 
 def colorWipe(strip, color, wait_ms=50):
     """Wipe color across display a pixel at a time."""
@@ -152,7 +151,7 @@ if __name__ == '__main__':
 
                 if instrument=="Piano":
                     for p in range(0,30):
-                        strip.setPixelColor(p,Color(pitch,pitch,0,0))
+                        strip.setPixelColor(p,wheel(pitch))
 
                     strip.show()
                     print("playing note",pitch)
