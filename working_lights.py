@@ -76,22 +76,21 @@ if __name__ == '__main__':
 
     start=time.time()
     print('Press Ctrl-C to quit.')
+    i=0
+    note_list=note_list[0][2:]
+
     while True:
-        for i in note_list[0]:
-            if i=='instrument' or i==81:
-                continue
-            else:
-                #print(i)
-                nstart=note_list[0][1]
-                nstop=note_list[0][2]
-                npitch=note_list[0][0]
-                if (time.time()-start)==nstart:
-                    print("NoteMatched!")
-                    strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
-                    strip.show()
-                    time.sleep(nstart-nstop)
-                    strip.setPixelColor(0,Color(0,0,0,0))
-            #print(time.time()-start)
-        # Color wipe animations.
         
-        strip.show()
+            
+        
+        nstart=note_list[0][i][1]
+        nstop=note_list[0][i][2]
+        npitch=note_list[0][i][0]
+        if (time.time()-start)==nstart:
+            print("NoteMatched!")
+            strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
+            strip.show()
+            time.sleep(nstart-nstop)
+            strip.setPixelColor(0,Color(0,0,0,0))
+
+        time.sleep(0.005)
