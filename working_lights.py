@@ -85,12 +85,14 @@ if __name__ == '__main__':
         print("start of the note",nstart)
         nstop=float(note_list[i][2])
         npitch=int(note_list[i][0])
-        if ((round(time.time()-start,2)-nstart))<=0.005:
+        if ((round(time.time()-start,2)-nstart))<=0.05:
             print("NoteMatched!")
-            strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
+            for j in range(0,110):
+                strip.setPixelColor(j, Color(npitch, npitch, npitch,0))
             strip.show()
             time.sleep(nstop-nstart)
-            strip.setPixelColor(0,Color(0,0,0,0))
+            for j in range(0,110):
+                strip.setPixelColor(j,Color(0,0,0,0))
             strip.show()
             i=i+1
         
