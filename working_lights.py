@@ -147,12 +147,15 @@ if __name__ == '__main__':
             print("instrument",instrument)
             if (previous_note[2]-n_end)>0:
                 time.sleep(previous_note[2]-n_end)
+                print("resting")
             else:
 
                 if instrument=="Piano":
                     for p in range(0,30):
-                        strip.setPixelColor(p,Color(pitch,pitch,0,0))                  
+                        strip.setPixelColor(p,Color(pitch,pitch,0,0))
+
                     strip.show()
+                    print("playing note",pitch)
                     time.sleep(n_end-n_start)
                     for p in range(0,30):
                         strip.setPixelColor(p,Color(0,0,0,0))
