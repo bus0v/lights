@@ -61,13 +61,13 @@ if __name__ == '__main__':
     # Intialize the library (must be called once before other functions).
     strip.begin()
 
-    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
+    colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
     time.sleep(2)
     blank(strip)
-    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
+    colorWipe(strip, Color(100,0, 0), 0)  # Green wipe
     time.sleep(2)
     blank(strip)
-    colorWipe(strip, Color(0, 100, 0), 0)  # Green wipe
+    colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
     time.sleep(2)
     blank(strip)
 
