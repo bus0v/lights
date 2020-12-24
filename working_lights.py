@@ -89,11 +89,11 @@ if __name__ == '__main__':
     start=time.time()
     print('Press Ctrl-C to quit.')
     i=0
-    
+    print(big_list)
     j=1
     while True:
         #for j in range(len(big_list)+1):
-
+        print("this is j ",j)
         note_list=big_list[j][2:]
         print("current time",round(time.time()-start,2))
         nstart=float(note_list[i][1])
