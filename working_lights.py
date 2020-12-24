@@ -81,11 +81,11 @@ if __name__ == '__main__':
 
     while True:
         print("current time",round(time.time()-start,2))
-        nstart=note_list[i][1]
+        nstart=float(note_list[i][1])
         print("start of the note",nstart)
-        nstop=note_list[i][2]
-        npitch=note_list[i][0]
-        if (round(time.time()-start,2)-nstart<=0.005:
+        nstop=float(note_list[i][2])
+        npitch=float(note_list[i][0])
+        if ((round(time.time()-start,2)-nstart))<=0.005:
             print("NoteMatched!")
             strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
             strip.show()
