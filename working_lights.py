@@ -47,7 +47,7 @@ def colorWipe(strip, color, wait_ms=50):
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
-def blank(strip, wait_ms=50):
+def blank(strip, wait_ms=25):
     for i in range(strip.numPixels()):
         strip.setPixelColor(i,(0,0,0,0))
         strip.show()
@@ -62,17 +62,17 @@ if __name__ == '__main__':
     strip.begin()
 
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(2)
+    time.sleep(1)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(2)
+    time.sleep(1)
     colorWipe(strip, Color(100,0, 0), 0)  # Green wipe
-    time.sleep(2)
+    time.sleep(1)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(2)
+    time.sleep(1)
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(2)
+    time.sleep(1)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(2)
+    time.sleep(1)
 
     start=time.time()
     print('Press Ctrl-C to quit.')
@@ -84,6 +84,7 @@ if __name__ == '__main__':
             
         
         nstart=note_list[i][1]
+        print("start of the note",nstart)
         nstop=note_list[i][2]
         npitch=note_list[i][0]
         if (time.time()-start)==nstart:
@@ -92,5 +93,7 @@ if __name__ == '__main__':
             strip.show()
             time.sleep(nstart-nstop)
             strip.setPixelColor(0,Color(0,0,0,0))
-
+            i=i+1
+        
         time.sleep(0.005)
+        print("current time",time.time())
