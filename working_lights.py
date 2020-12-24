@@ -104,10 +104,10 @@ if __name__ == '__main__':
     previous_note=["s",0,0,0]
     while True:
         for note in best_list:
-            note[0]=instrument
-            note[1]=pitch
-            note[2]=n_start
-            note[3]=n_end
+            instrument=note[0]
+            pitch=note[1]
+            n_start=note[2]
+            n_end=note[3]
             if (previous_note[2]-n_end)>0:
                 time.sleep(previous_note[2]-n_end)
             else:
