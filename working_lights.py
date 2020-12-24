@@ -114,7 +114,7 @@ if __name__ == '__main__':
 
                 if instrument=="Piano":
                     for p in range(0,30):
-                        strip.setPixelColor(p, wheel(pitch))                  
+                        strip.setPixelColor(p, pitch,pitch,0,0)                  
                     strip.show()
                     time.sleep(n_end-n_start)
                     for p in range(0,30):
