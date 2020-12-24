@@ -63,13 +63,16 @@ if __name__ == '__main__':
 
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip)
+    colorWipe(strip, Color(0, 0, 0), 0)
+    time.sleep(2)
     colorWipe(strip, Color(100,0, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip)
+    colorWipe(strip, Color(0, 0, 0), 0)
+    time.sleep(2)
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
     time.sleep(2)
-    blank(strip)
+    colorWipe(strip, Color(0, 0, 0), 0)
+    time.sleep(2)
 
     start=time.time()
     print('Press Ctrl-C to quit.')
@@ -83,7 +86,7 @@ if __name__ == '__main__':
                 nstop=note_list[0][2]
                 npitch=note_list[0][0]
                 if (time.time()-start)==nstart:
-                    
+                    print("NoteMatched!")
                     strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
                     strip.show()
                     time.sleep(nstart-nstop)
