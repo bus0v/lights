@@ -94,7 +94,7 @@ if __name__ == '__main__':
     while True:
         #for j in range(len(big_list)+1):
         print("this is j ",j)
-        print(big_list[j])
+        #print(big_list[j])
         note_list=big_list[j][2:]
         print("current time",round(time.time()-start,2))
         nstart=float(note_list[i][1])
@@ -103,6 +103,8 @@ if __name__ == '__main__':
         npitch=int(note_list[i][0])
         if ((round(time.time()-start,2)-nstart))<=0.005:
             print("NoteMatched!")
+            print(npitch)
+            print(wheel(npitch))
             for p in range(30,30+30):
 
                 strip.setPixelColor(p, wheel(npitch))
