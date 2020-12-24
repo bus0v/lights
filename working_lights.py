@@ -80,6 +80,7 @@ if __name__ == '__main__':
     note_list=note_list[1][2:]
 
     while True:
+        print("current time",round(time.time()-start,2))
         nstart=note_list[i][1]
         print("start of the note",nstart)
         nstop=note_list[i][2]
@@ -92,5 +93,5 @@ if __name__ == '__main__':
             strip.setPixelColor(0,Color(0,0,0,0))
             i=i+1
         
-        time.sleep(0.05)
-        print("current time",round(time.time()-start,2))
+        time.sleep(0.005)
+        
