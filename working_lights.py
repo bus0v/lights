@@ -103,13 +103,13 @@ if __name__ == '__main__':
         npitch=int(note_list[i][0])
         if ((round(time.time()-start,2)-nstart))<=0.05:
             print("NoteMatched!")
-            for j in range(30,30+30):
+            for p in range(30,30+30):
 
-                strip.setPixelColor(j, wheel(npitch))
+                strip.setPixelColor(p, wheel(npitch))
             strip.show()
             time.sleep(nstop-nstart)
-            for j in range(30,30+30):
-                strip.setPixelColor(j,Color(0,0,0,0))
+            for p in range(30,30+30):
+                strip.setPixelColor(p,Color(0,0,0,0))
             strip.show()
             i=i+1
         
