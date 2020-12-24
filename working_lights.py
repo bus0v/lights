@@ -47,7 +47,7 @@ def colorWipe(strip, color, wait_ms=50):
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
-def blank(strip, wait_ms=25):
+def blank(strip, wait_ms=10):
     for i in range(strip.numPixels()):
         strip.setPixelColor(i,(0,0,0,0))
         strip.show()
@@ -62,32 +62,29 @@ if __name__ == '__main__':
     strip.begin()
 
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(1)
+    time.sleep(0.5)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(1)
+    time.sleep(0.5)
     colorWipe(strip, Color(100,0, 0), 0)  # Green wipe
-    time.sleep(1)
+    time.sleep(0.5)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(1)
+    time.sleep(0.5)
     colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(1)
+    time.sleep(0.5)
     colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(1)
+    
 
-    start=time.time()+10
+    start=time.time()
     print('Press Ctrl-C to quit.')
     i=0
     note_list=note_list[0][2:]
 
     while True:
-        
-            
-        
         nstart=note_list[i][1]
         print("start of the note",nstart)
         nstop=note_list[i][2]
         npitch=note_list[i][0]
-        if (time.time()-start)==nstart:
+        if (round(time.time(),2)+15-start)==nstart:
             print("NoteMatched!")
             strip.setPixelColor(0, Color(npitch, npitch, npitch,0))
             strip.show()
