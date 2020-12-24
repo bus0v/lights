@@ -74,7 +74,7 @@ if __name__ == '__main__':
     colorWipe(strip, Color(0, 0, 0), 0)
     time.sleep(1)
 
-    start=time.time()
+    start=time.time()+10
     print('Press Ctrl-C to quit.')
     i=0
     note_list=note_list[0][2:]
@@ -96,4 +96,4 @@ if __name__ == '__main__':
             i=i+1
         
         time.sleep(0.005)
-        print("current time",time.time())
+        print("current time",time.time()-start)
