@@ -111,7 +111,7 @@ def snowing(strip, wait_ms=50):
     for time in range(0,11):
         pos=random.randint(10,104)
         for bright in range(0,100):
-            strip.setPixelColor(pos,(0,0,bright,0))
+            strip.setPixelColor(pos,Color(0,0,bright,0))
             strip.show()
             time.sleep(wait_ms/1000)
 
