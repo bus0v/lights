@@ -4,7 +4,7 @@
 # Direct port of the Arduino NeoPixel library strandtest example.  Showcases
 # various animations on a strip of NeoPixels.
 import time
-
+import random
 from rpi_ws281x import Color, PixelStrip, ws
 
 
@@ -107,27 +107,15 @@ def blank(strip, wait_ms=10):
         strip.show()
         time.sleep(wait_ms / 1000.0) 
 
-# Main program logic follows:
-if __name__ == '__main__':
+def snowing(strip, wait_ms=50):
+    for time in range(0,11):
+        pos=random.randint(10,104)
+        for bright in range(0,100):
+            strip.setPixelColor(pos,(0,0,bright,0))
+            strip.show()
+            time.sleep(wait_ms/1000)
 
-    # Create PixelStrip object with appropriate configuration.
-    strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
-    # Intialize the library (must be called once before other functions).
-    strip.begin()
-
-    colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(0.5)
-    colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(0.5)
-    colorWipe(strip, Color(100,0, 0), 0)  # Green wipe
-    time.sleep(0.5)
-    colorWipe(strip, Color(0, 0, 0), 0)
-    time.sleep(0.5)
-    colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
-    time.sleep(0.5)
-    colorWipe(strip, Color(0, 0, 0), 0)
-    
-
+def MIDI():
     start=time.time()
     print('Press Ctrl-C to quit.')
     i=0
@@ -164,6 +152,21 @@ if __name__ == '__main__':
             previous_note=note
 
         i=i+1
+
+# Main program logic follows:
+if __name__ == '__main__':
+
+    # Create PixelStrip object with appropriate configuration.
+    strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
+    # Intialize the library (must be called once before other functions).
+    strip.begin()
+
+    colorWipe(strip, Color(100, 0, 0), 0)  # Green wipe
+    time.sleep(0.5)
+    snowing(strip)
+    
+
+    
         # #for j in range(len(big_list)+1):
         # print("this is j ",j)
         # #print(big_list[j])
