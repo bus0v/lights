@@ -114,6 +114,10 @@ def snowing(strip, wait_ms=50):
             strip.setPixelColor(pos,Color(0,0,bright,0))
             strip.show()
             time.sleep(wait_ms/1000)
+        for bright in range(100,0):
+            strip.setPixelColor(pos,Color(0,0,bright,0))
+            strip.show()
+            time.sleep(wait_ms/1000)
 
 def MIDI():
     start=time.time()
