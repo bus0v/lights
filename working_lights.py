@@ -108,7 +108,7 @@ def blank(strip, wait_ms=10):
         strip.show()
         time.sleep(wait_ms / 1000.0) 
 
-def fade(strip,start,stop,pixel, wait_ms=10):
+def fade(strip,start,stop,pixel, wait_ms=50):
     for i in range(start,stop):
         strip.setPixelColor(pixel,Color(0,0,i,0))
         strip.show()
@@ -140,7 +140,7 @@ def snowing_lr(strip,wait_ms=10):
                 right=pos+r
                 left=pos-r
                 d_fade(strip,0,255,left,right,0)
-            time.wait(wait_ms/1000)  
+            time.sleep(wait_ms/1000)  
 
 def snowing(strip, wait_ms=0.5):
     print("running snow")
@@ -219,7 +219,7 @@ if __name__ == '__main__':
     time.sleep(0.1)
     colorWipe(strip, Color(0, 0, 0), 0)
     time.sleep(0.1)
-    colorWipe(strip, Color(100, 0, 0))
+    colorWipe(strip, Color(100, 0, 0),0)
     time.sleep(0.1)
     colorWipe(strip, Color(0, 0, 0), 0)
     snowing_lr(strip,0)
