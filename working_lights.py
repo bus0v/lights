@@ -125,12 +125,13 @@ def snowing_lr(strip,wait_ms=50):
     print("running snow_lr")
     for t in range(0,10):
         
-        pos=t*10+10
-        #random.randint(10,104)
+        pos=random.randint(10,104)
         #print("initial position",pos)
         s=0
         left=0
         right=0
+        old_l=0
+        old_r=0
         for r in range(0,4):
             #print("r=",r)
             if r==0:
@@ -143,6 +144,14 @@ def snowing_lr(strip,wait_ms=50):
                 left=pos-r
                 strip.setPixelColor(right,Color(0,0,100,0))
                 strip.setPixelColor(left,Color(0,0,100,0))
+                if r==1:
+                    strip.setPixelColor(pos,Color(0,0,0,0))
+                else:
+                    old_r=right-1
+                    old_l=left+1
+                    strip.setPixelColor(old_r,Color(0,0,0,0))
+                    strip.setPixelColor(old_l,Color(0,0,0,0))
+                
                 #d_fade(strip,0,255,left,right,0)
             strip.show()
             time.sleep(wait_ms/1000.0)  
