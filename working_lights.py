@@ -112,12 +112,12 @@ def fade(strip,start,stop,pixel, wait_ms=10):
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
-def snowing(strip, wait_ms=5.0):
+def snowing(strip, wait_ms=2.5):
     print("running snow")
     for t in range(0,50):
         cur_pos=0
         pos=random.randint(10,104)
-        print("initial position")
+        print("initial position",pos)
         for r in range(0,10):
             if r%2==0:
                
