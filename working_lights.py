@@ -136,14 +136,14 @@ def snowing_lr(strip,wait_ms=100):
             #print("r=",r)
             if r==0:
                 #fade(strip,0,255,pos,0)
-                strip.setPixelColor(pos,Color(0,0,100,0))
+                strip.setPixelColor(pos,Color(0,0,100,100))
                 
                 s=s+1
             else:
                 right=pos+r
                 left=pos-r
-                strip.setPixelColor(right,Color(0,0,100,0))
-                strip.setPixelColor(left,Color(0,0,100,0))
+                strip.setPixelColor(right,Color(0,0,100,100))
+                strip.setPixelColor(left,Color(0,0,100,100))
                 if r==1:
                     strip.setPixelColor(pos,Color(0,0,0,0))
                 else:
@@ -239,6 +239,7 @@ if __name__ == '__main__':
     time.sleep(0.1)
     colorWipe(strip, Color(0, 0, 0), 0)
     snowing_lr(strip)
+    colorWipe(strip, Color(0, 0, 0), 0)
     
 
     
