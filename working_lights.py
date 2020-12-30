@@ -113,6 +113,35 @@ def fade(strip,start,stop,pixel, wait_ms=10):
         strip.setPixelColor(pixel,Color(0,0,i,0))
         strip.show()
         time.sleep(wait_ms / 1000.0)
+def d_fade(strip,start,stop,left,right, wait_ms=10):
+    for i in range(start,stop):
+        strip.setPixelColor(left,Color(0,0,i,0))
+        strip.setPixelColor(right,Color(0,0,i,0))
+
+        strip.show()
+        time.sleep(wait_ms / 1000.0)
+
+def snowing_lr(strip, wait_ms=0.1):
+    print("running snow")
+    for t in range(0,10):
+        
+        pos=random.randint(10,104)
+        print("initial position",pos)
+        s=0
+        left=0
+        right=0
+        for r in range(0,10):
+            print("r=",r)
+            if r==0:
+                fade(strip,0,255,pos,0.1)
+                s=s+1
+            else:
+                right=pos+1
+                left=pos-1
+                
+    
+                d_fade(strip,0,255,left,right,0.1)
+                
 
 def snowing(strip, wait_ms=0.5):
     print("running snow")
@@ -143,14 +172,12 @@ def snowing(strip, wait_ms=0.5):
                 s=s+0.5
                 fade(strip,0,255,cur_pos, 0.1)        
             
-            
-
 def MIDI():
-    start=time.time()
+    #start=time.time()
     print('Press Ctrl-C to quit.')
     i=0
     #print(big_list)
-    j=2
+    
     previous_note=["s",0,0,0]
     while True:
         for note in best_list:
@@ -193,7 +220,7 @@ if __name__ == '__main__':
     time.sleep(0.5)
     colorWipe(strip, Color(0, 0, 0), 0)
     time.sleep(0.5)
-    snowing(strip)
+    snowing_lr(strip)
     
 
     
