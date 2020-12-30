@@ -169,7 +169,7 @@ def backnfwd(strip,wait_ms=10):
 
 def snowing_lr(strip,wait_ms=20):
     print("running snow_lr")
-    for t in range(0,10):
+    for t in range(0,30):
         pos=random.randint(10,104)
         print("initial position",pos)
         left=0
