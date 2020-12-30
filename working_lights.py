@@ -169,7 +169,7 @@ def backnfwd(strip,wait_ms=10):
 
 def snowing_lr(strip,wait_ms=20):
     print("running snow_lr")
-    for t in range(0,30):
+    for t in range(0,1000):
         pos=random.randint(10,104)
         print("initial position",pos)
         left=0
@@ -209,8 +209,8 @@ def snowing_lr(strip,wait_ms=20):
                
                 #d_fade(strip,0,255,left,right,0)
             strip.show()
-            time.sleep(wait_ms/1000.0) 
-        time.sleep(wait_ms/1000.0)
+            time.sleep(5/1000.0) 
+        time.sleep(10/1000.0)
 def snowing(strip, wait_ms=0.5):
     print("running snow")
     for t in range(0,10):
