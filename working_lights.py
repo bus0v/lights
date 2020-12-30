@@ -136,8 +136,8 @@ def snowing_lr(strip, wait_ms=0.1):
                 fade(strip,0,255,pos,0.1)
                 s=s+1
             else:
-                right=pos+1
-                left=pos-1
+                right=pos+r
+                left=pos-r
                 
     
                 d_fade(strip,0,255,left,right,0.1)
