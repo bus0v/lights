@@ -127,7 +127,7 @@ def snowing_lr(strip,wait_ms=100):
         
         pos=random.randint(10,104)
         print("initial position",pos)
-        s=0
+        
         left=0
         right=0
         old_l=0
@@ -142,7 +142,7 @@ def snowing_lr(strip,wait_ms=100):
                 print("first pixel",pos)
                 strip.setPixelColor(pos,Color(0,0,100,10))
                 
-                s=s+1
+               
             else:
                 right=pos+r
                 left=pos-r
