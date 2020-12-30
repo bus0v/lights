@@ -222,7 +222,7 @@ if __name__ == '__main__':
     colorWipe(strip, Color(100, 0, 0), 10)
     time.sleep(0.1)
     colorWipe(strip, Color(0, 0, 0), 0)
-    snowing_lr(strip)
+    snowing_lr(strip,0)
     
 
     
