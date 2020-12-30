@@ -144,7 +144,7 @@ def snowing(strip, wait_ms=2.5):
                     strip.show()
                     time.sleep(wait_ms / 1000.0)                  
             
-            print("r=",r)
+            
 
 def MIDI():
     start=time.time()
