@@ -119,7 +119,7 @@ def snowing(strip, wait_ms=2.5):
         pos=random.randint(10,104)
         print("initial position",pos)
         r=0
-        while r>10:
+        while r<10:
             if r%2==0:
                 cur_pos=pos+r
                 print("current position",cur_pos)
