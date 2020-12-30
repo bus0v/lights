@@ -118,14 +118,14 @@ def snowing(strip, wait_ms=2.5):
         cur_pos=0
         pos=random.randint(10,104)
         print("initial position",pos)
-        r=0
-        while r<10:
+        s=0
+        for r in range(0,10):
             
             if r%2==0:
-                inc=int(r)
+                inc=int(s)
                 cur_pos=pos+inc
                 print("current position",cur_pos)
-                r=r+0.5
+                s=s+0.5
                 
                 for i in range(0,255):
                     #print("fading")
@@ -134,10 +134,10 @@ def snowing(strip, wait_ms=2.5):
                     time.sleep(wait_ms / 1000.0)
                                 
             elif r%2==1:
-                inc=int(r)
+                inc=int(s)
                 cur_pos=pos-inc
                 print("current position",cur_pos)
-                r=r+0.5
+                s=s+0.5
                 for i in range(0,255):
                    # print("fading")
                     strip.setPixelColor(cur_pos,Color(0,0,i,0))
