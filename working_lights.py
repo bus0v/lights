@@ -121,7 +121,7 @@ def d_fade(strip,start,stop,left,right, wait_ms=10):
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
-def snowing_lr(strip,wait_ms=500):
+def snowing_lr(strip,wait_ms=100):
     print("running snow_lr")
     for t in range(0,10):
         
@@ -154,8 +154,10 @@ def snowing_lr(strip,wait_ms=500):
                 
                 #d_fade(strip,0,255,left,right,0)
             strip.show()
-            time.sleep(wait_ms/1000.0)  
-
+            time.sleep(wait_ms/1000.0)
+        strip.setPixelColor(right,Color(0,0,0,0))
+        strip.setPixelColor(left,Color(0,0,0,0))  
+        time.sleep(wait_ms/1000.0)
 def snowing(strip, wait_ms=0.5):
     print("running snow")
     for t in range(0,10):
