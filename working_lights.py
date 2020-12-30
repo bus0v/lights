@@ -122,7 +122,8 @@ def snowing(strip, wait_ms=2.5):
         while r<10:
             
             if r%2==0:
-                cur_pos=pos+int(r)
+                inc=int(r)
+                cur_pos=pos+inc
                 print("current position",cur_pos)
                 r=r+0.5
                 
@@ -133,7 +134,8 @@ def snowing(strip, wait_ms=2.5):
                     time.sleep(wait_ms / 1000.0)
                                 
             elif r%2==1:
-                cur_pos=pos-int(r)
+                inc=int(r)
+                cur_pos=pos-inc
                 print("current position",cur_pos)
                 r=r+0.5
                 for i in range(0,255):
