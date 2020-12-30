@@ -141,7 +141,7 @@ def snowing(strip, wait_ms=0.5):
                 cur_pos=pos-inc
                 print("current position",cur_pos)
                 s=s+0.5
-                fade(strip,0,255,cur_pos, 0.1):                 
+                fade(strip,0,255,cur_pos, 0.1)        
             
             
 
