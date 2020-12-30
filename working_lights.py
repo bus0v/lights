@@ -84,7 +84,8 @@ best_list=[['Piano', 42, 0.0, 0.125], ['Piano', 36, 0.0, 0.125], ['Piano', 42, 0
   ['Piano', 42, 47.0, 47.125], ['Piano', 36, 47.0, 47.125], ['Piano', 42, 47.25, 47.375], ['Piano', 36, 47.25, 47.375], ['Piano', 42, 47.5, 47.625],
    ['Piano', 39, 47.5, 47.625], ['Piano', 49, 48.0, 48.25], ['Piano', 36, 48.0, 48.25]]
 
-def wheel(pos):
+def wheel(hex):
+    pos=int(hex,16)
     rgb_int=16777215
     rgb=int(pos/108*rgb_int)
     """Generate rainbow colors across 0-255 positions."""
@@ -106,9 +107,10 @@ def blank(strip, wait_ms=10):
         strip.setPixelColor(i,(0,0,0,0))
         strip.show()
         time.sleep(wait_ms / 1000.0) 
+
 def fade(strip,start,stop,pixel, wait_ms=10):
     for i in range(start,stop):
-        strip.setPixelColor(pixel,(i,0,0,0))
+        strip.setPixelColor(pixel,(0,0,i,0))
         strip.show()
         time.sleep(wait_ms / 1000.0)
 
@@ -122,6 +124,7 @@ def snowing(strip, wait_ms=0.5):
         for r in range(0,10):
             print("r=",r)
             if r==0:
+                fade(strip,0,255,pos,0.1)
                 s=s+1
             if r%2==0:
                 inc=int(s)
@@ -129,11 +132,8 @@ def snowing(strip, wait_ms=0.5):
                 cur_pos=pos+inc
                 print("current position",cur_pos)
                 s=s+0.5
-                for i in range(0,255):
-                    #print("fading")
-                    strip.setPixelColor(cur_pos,Color(0,0,i,0))
-                    strip.show()
-                    time.sleep(wait_ms / 1000.0)
+                fade(strip,0,255,cur_pos,0.1)
+                
                                 
             elif r%2==1:
                 inc=int(s)
@@ -141,11 +141,7 @@ def snowing(strip, wait_ms=0.5):
                 cur_pos=pos-inc
                 print("current position",cur_pos)
                 s=s+0.5
-                for i in range(0,255):
-                   # print("fading")
-                    strip.setPixelColor(cur_pos,Color(0,0,i,0))
-                    strip.show()
-                    time.sleep(wait_ms / 1000.0)                  
+                fade(strip,0,255,cur_pos, 0.1):                 
             
             
 
