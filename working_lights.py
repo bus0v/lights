@@ -134,13 +134,16 @@ def snowing_lr(strip,wait_ms=10):
         for r in range(0,4):
             #print("r=",r)
             if r==0:
-                fade(strip,0,255,pos,0)
+                #fade(strip,0,255,pos,0)
+                strip.setPixelColor(pos,Color(0,0,100,0))
                 s=s+1
             else:
                 right=pos+r
                 left=pos-r
-                d_fade(strip,0,255,left,right,0)
-            time.sleep(wait_ms/1000)  
+                strip.setPixelColor(right,Color(0,0,100,0))
+                strip.setPixelColor(left,Color(0,0,100,0))
+                #d_fade(strip,0,255,left,right,0)
+            time.sleep(wait_ms/1000.0)  
 
 def snowing(strip, wait_ms=0.5):
     print("running snow")
