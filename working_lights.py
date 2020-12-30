@@ -156,6 +156,8 @@ def snowing_lr(strip,wait_ms=100):
                 else:
                     old_r=right
                     old_l=left
+                    print("old_r",old_r)
+                    print("old_l",old_l)
                     strip.setPixelColor(old_r,Color(0,0,0,0))
                     strip.setPixelColor(old_l,Color(0,0,0,0))
                 
