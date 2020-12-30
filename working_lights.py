@@ -144,11 +144,12 @@ def snowing_lr(strip,wait_ms=100):
                 left=pos-r
                 strip.setPixelColor(right,Color(0,0,100,100))
                 strip.setPixelColor(left,Color(0,0,100,100))
+                old_r=right
+                old_l=left
                 if r==1:
                     strip.setPixelColor(pos,Color(0,0,0,0))
                 else:
-                    old_r=right-1
-                    old_l=left+1
+                
                     strip.setPixelColor(old_r,Color(0,0,0,0))
                     strip.setPixelColor(old_l,Color(0,0,0,0))
                 
