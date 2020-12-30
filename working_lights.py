@@ -108,12 +108,12 @@ def blank(strip, wait_ms=10):
         strip.show()
         time.sleep(wait_ms / 1000.0) 
 
-def fade(strip,start,stop,pixel, wait_ms=50):
+def fade(strip,start,stop,pixel, wait_ms=10):
     for i in range(start,stop):
         strip.setPixelColor(pixel,Color(0,0,i,0))
         strip.show()
         time.sleep(wait_ms / 1000.0)
-def d_fade(strip,start,stop,left,right, wait_ms=50):
+def d_fade(strip,start,stop,left,right, wait_ms=10):
     for i in range(start,stop):
         strip.setPixelColor(left,Color(0,0,i,0))
         strip.setPixelColor(right,Color(0,0,i,0))
