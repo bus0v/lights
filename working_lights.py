@@ -84,8 +84,8 @@ best_list=[['Piano', 42, 0.0, 0.125], ['Piano', 36, 0.0, 0.125], ['Piano', 42, 0
   ['Piano', 42, 47.0, 47.125], ['Piano', 36, 47.0, 47.125], ['Piano', 42, 47.25, 47.375], ['Piano', 36, 47.25, 47.375], ['Piano', 42, 47.5, 47.625],
    ['Piano', 39, 47.5, 47.625], ['Piano', 49, 48.0, 48.25], ['Piano', 36, 48.0, 48.25]]
 
-def wheel(hex):
-    pos=int(hex,16)
+def wheel(pos):
+    #pos=int(hex,16)
     rgb_int=16777215
     rgb=int(pos/108*rgb_int)
     """Generate rainbow colors across 0-255 positions."""
@@ -171,6 +171,8 @@ def drops(strip,wait_ms=20):
     print("colour drops")
     for t in range(0,1000):
         pos=random.randint(10,104)
+        hue=random.randint(100,16777215)
+
         print("initial position",pos)
         for r in range(0,20):
             if r<10:
@@ -178,14 +180,14 @@ def drops(strip,wait_ms=20):
                 if r==0:
                     #fade(strip,0,255,pos,0)
                     print("first pixel",pos)
-                    strip.setPixelColor(pos,Color(0,0,100,10))            
+                    strip.setPixelColor(pos,wheel(hue))            
                 else:
                     right=pos+r
                     left=pos-r
                     print("left",left)
                     print("right",right)
-                    strip.setPixelColor(right,Color(0,0,100,10))
-                    strip.setPixelColor(left,Color(0,0,100,10))
+                    strip.setPixelColor(right,wheel(hue))
+                    strip.setPixelColor(left,wheel(hue))
                 strip.show()
                 time.sleep(wait_ms/1000.0)
                     
