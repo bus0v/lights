@@ -167,6 +167,48 @@ def backnfwd(strip,wait_ms=10):
         strip.setPixelColor(left,Color(0,0,0,0))  
         time.sleep(wait_ms/1000.0)
 
+def drops(strip,wait_ms=20):
+    print("colour drops")
+    for t in range(0,1000):
+        pos=random.randint(10,104)
+        print("initial position",pos)
+        for r in range(0,20):
+            if r<10:
+                print("r=",r)
+                if r==0:
+                    #fade(strip,0,255,pos,0)
+                    print("first pixel",pos)
+                    strip.setPixelColor(pos,Color(0,0,100,10))            
+                else:
+                    right=pos+r
+                    left=pos-r
+                    print("left",left)
+                    print("right",right)
+                    strip.setPixelColor(right,Color(0,0,100,10))
+                    strip.setPixelColor(left,Color(0,0,100,10))
+                strip.show()
+                time.sleep(wait_ms/1000.0)
+                    
+        
+            elif r>=10:
+                r=r%10
+                print("fadeback")
+                if r==0:
+                    #fade(strip,0,255,pos,0)
+                    print("first pixel",pos)
+                    strip.setPixelColor(pos,Color(0,0,0,0))          
+                else:
+                    right=pos+r
+                    left=pos-r
+                    print("left",left)
+                    print("right",right)
+                    strip.setPixelColor(right,Color(0,0,0,0))
+                    strip.setPixelColor(left,Color(0,0,0,0))
+                    #d_fade(strip,0,255,left,right,0)
+            strip.show()
+            time.sleep(5/1000.0) 
+        time.sleep(10/1000.0)
+
 def snowing_lr(strip,wait_ms=20):
     print("running snow_lr")
     for t in range(0,1000):
@@ -174,8 +216,6 @@ def snowing_lr(strip,wait_ms=20):
         print("initial position",pos)
         left=0
         right=0
-        old_l=0
-        old_r=0
         for r in range(0,10):
             print("r=",r)
             if r==0:
@@ -291,7 +331,7 @@ if __name__ == '__main__':
     colorWipe(strip, Color(100, 0, 0),0)
     time.sleep(0.1)
     colorWipe(strip, Color(0, 0, 0), 0)
-    snowing_lr(strip)
+    drops(strip)
     colorWipe(strip, Color(0, 0, 0), 0)
     
 
